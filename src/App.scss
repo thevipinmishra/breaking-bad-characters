@@ -38,7 +38,7 @@ body {
 
 // Header
 .site-header {
-  padding: 2rem 0;
+  padding: 4rem 0;
   text-align: center;
   color: var(--accent);
 
@@ -50,12 +50,13 @@ body {
   .filters {
     .search-input-wrapper {
       width: 80%;
-      max-width: 300px;
+      max-width: 440px;
 
       .search-input {
         background: #131731;
         color: #fff;
         padding: 0.75rem 1rem 0.75rem 3rem;
+        width: 100%;
         border: none;
         border-radius: 5px;
         outline: none;
@@ -93,7 +94,7 @@ body {
 .characters-grid {
   display: grid;
   gap: 0.75rem;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 // Card
