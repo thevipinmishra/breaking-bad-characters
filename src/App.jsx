@@ -8,7 +8,7 @@ const Character = lazy(() => import("./pages/Character"));
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/breaking-bad-characters">
       <Suspense fallback={<Spinner />}>
         <Routes>
           <Route path="/" element={<Characters />} />
