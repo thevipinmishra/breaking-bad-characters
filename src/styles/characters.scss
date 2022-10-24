@@ -84,3 +84,20 @@
     max-inline-size: 400px;
   }
 }
+
+.no-data {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--gray-8);
+  padding: 1rem;
+  border-radius: var(--radius-2);
+  & > h3 {
+    font-size: var(--font-size-2);
+
+    @include media(lg) {
+      font-size: var(--font-size-4);
+    }
+  }
+}

@@ -44,26 +44,29 @@ export default function Characters() {
           </div>
 
           <div className={`characters-grid ${search && "has-search-items"}`}>
-            {!search
-              ? data.map((character) => (
+            {!search ? (
+              data.map((character) => (
+                <CharacterItem character={character} key={character.char_id} />
+              ))
+            ) : data.filter((character) =>
+                character.name.toLowerCase().startsWith(search.toLowerCase())
+              ).length === 0 ? (
+              <div className="no-data">
+                <h3>No Characters Found</h3>
+              </div>
+            ) : (
+              data
+                .filter((character) =>
+                  character.name.toLowerCase().startsWith(search.toLowerCase())
+                )
+                .map((character) => (
                   <CharacterItem
+                    fromSearch
                     character={character}
                     key={character.char_id}
                   />
                 ))
-              : data
-                  .filter((character) =>
-                    character.name
-                      .toLowerCase()
-                      .startsWith(search.toLowerCase())
-                  )
-                  .map((character) => (
-                    <CharacterItem
-                      fromSearch
-                      character={character}
-                      key={character.char_id}
-                    />
-                  ))}
+            )}
           </div>
         </>
       )}
