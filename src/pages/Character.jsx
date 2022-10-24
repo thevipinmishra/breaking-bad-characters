@@ -19,8 +19,6 @@ export default function Character() {
     .getQueryData(["characters"])
     ?.find((character) => character.char_id === Number(id) + 1);
 
-  console.log(prevCharacter, nextCharacter);
-
   const {
     isLoading,
     data: character,
@@ -111,8 +109,8 @@ export default function Character() {
               </button>
             </div>
 
-            <div className="next-prev">
-              {prevCharacter && (
+            {(prevCharacter || nextCharacter) && (
+              <div className="next-prev">
                 <button
                   onClick={() =>
                     navigate(`/characters/${prevCharacter.char_id}`)
@@ -133,8 +131,7 @@ export default function Character() {
                   </svg>{" "}
                   {prevCharacter.name}
                 </button>
-              )}
-              {nextCharacter && (
+
                 <button
                   onClick={() =>
                     navigate(`/characters/${nextCharacter.char_id}`)
@@ -155,8 +152,8 @@ export default function Character() {
                     <path d="M13 17l5-5-5-5M6 17l5-5-5-5"></path>
                   </svg>
                 </button>
-              )}
-            </div>
+              </div>
+            )}
           </div>
           <div className="image">
             <img src={character.img} alt={character.img} />

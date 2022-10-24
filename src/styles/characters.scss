@@ -20,11 +20,15 @@
   transition: border-color 150ms var(--ease-in-2);
   box-shadow: var(--shadow-1);
 
+  @media (prefers-color-scheme: light) {
+    border: 2px solid var(--gray-2);
+  }
+
   &:hover {
-    border-color: var(--yellow-4);
+    border-color: var(--color-scheme);
 
     .nickname {
-      background-color: var(--yellow-9);
+      background-color: var(--color-scheme);
       color: #fff;
     }
   }
@@ -52,6 +56,10 @@
     background-color: var(--gray-8);
     border-radius: 9rem;
     transition: background-color 150ms var(--ease-in-2);
+
+    @media (prefers-color-scheme: light) {
+      color: #fff;
+    }
   }
 }
 

@@ -20,7 +20,9 @@
   font-family: var(--font-sans);
   line-height: var(--font-lineheight-3);
   scrollbar-color: var(--scrollthumb-color) transparent;
+  --color-scheme: var(--grape-9);
 }
+
 @media (dynamic-range: high) {
   @supports (color(display-p3 0 0.5 1)) {
     :where(html) {
@@ -40,6 +42,7 @@
     --surface-3: var(--gray-7);
     --surface-4: var(--gray-6);
     color-scheme: dark;
+    --color-scheme: var(--yellow-9);
   }
 }
 :where(h1, h2, h3, h4, h5, h6, dt) {
@@ -398,7 +401,7 @@ body {
     }
 
     a {
-      color: var(--yellow-8);
+      color: var(--color-scheme);
     }
   }
 }

@@ -45,6 +45,10 @@
         text-transform: uppercase;
         transition: background-color 200ms var(--ease-in-2);
 
+        @media (prefers-color-scheme: light) {
+          color: var(--gray-0);
+        }
+
         &:hover {
           background-color: var(--gray-9);
         }
@@ -75,13 +79,18 @@
         transition: background-color 200ms var(--ease-in-2),
           color 200ms var(--ease-in-2);
 
+        @media (prefers-color-scheme: light) {
+          color: var(--gray-0);
+          border: none;
+        }
+
         @include media(lg) {
           padding: 0.75em 1em;
         }
 
         &:hover {
-          background-color: var(--yellow-9);
-          color: var(--gray-9);
+          background-color: var(--color-scheme);
+          color: var(--gray-0);
         }
       }
     }
@@ -148,7 +157,7 @@
       p {
         text-transform: uppercase;
         font-size: var(--font-size-1);
-        color: var(--yellow-7);
+        color: var(--color-scheme);
       }
       ul {
         padding-left: 1rem;
@@ -163,7 +172,7 @@
       p {
         text-transform: uppercase;
         font-size: var(--font-size-1);
-        color: var(--yellow-7);
+        color: var(--color-scheme);
       }
 
       ul {
@@ -186,6 +195,10 @@
           border-radius: var(--radius-2);
           transition: background-color 150ms var(--ease-in-2);
           box-shadow: var(--shadow-1);
+
+          @media (prefers-color-scheme: light) {
+            color: var(--gray-0);
+          }
         }
       }
     }
@@ -200,7 +213,7 @@
       .heading {
         text-transform: uppercase;
         font-size: var(--font-size-1);
-        color: var(--yellow-7);
+        color: var(--color-scheme);
         font-weight: 400;
         margin-block-end: 0.75rem;
       }
@@ -220,7 +233,7 @@
       .heading {
         text-transform: uppercase;
         font-size: var(--font-size-1);
-        color: var(--yellow-7);
+        color: var(--color-scheme);
         font-weight: 400;
         margin-block-end: 0.75rem;
       }
