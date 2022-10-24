@@ -111,47 +111,51 @@ export default function Character() {
 
             {(prevCharacter || nextCharacter) && (
               <div className="next-prev">
-                <button
-                  onClick={() =>
-                    navigate(`/characters/${prevCharacter.char_id}`)
-                  }
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="feather feather-chevrons-left"
+                {prevCharacter && (
+                  <button
+                    onClick={() =>
+                      navigate(`/characters/${prevCharacter.char_id}`)
+                    }
                   >
-                    <path d="M11 17l-5-5 5-5m7 10l-5-5 5-5"></path>
-                  </svg>{" "}
-                  {prevCharacter.name}
-                </button>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      className="feather feather-chevrons-left"
+                    >
+                      <path d="M11 17l-5-5 5-5m7 10l-5-5 5-5"></path>
+                    </svg>{" "}
+                    {prevCharacter.name}
+                  </button>
+                )}
 
-                <button
-                  onClick={() =>
-                    navigate(`/characters/${nextCharacter.char_id}`)
-                  }
-                >
-                  {nextCharacter.name}{" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="feather feather-chevrons-right"
+                {nextCharacter && (
+                  <button
+                    onClick={() =>
+                      navigate(`/characters/${nextCharacter.char_id}`)
+                    }
                   >
-                    <path d="M13 17l5-5-5-5M6 17l5-5-5-5"></path>
-                  </svg>
-                </button>
+                    {nextCharacter.name}{" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      className="feather feather-chevrons-right"
+                    >
+                      <path d="M13 17l5-5-5-5M6 17l5-5-5-5"></path>
+                    </svg>
+                  </button>
+                )}
               </div>
             )}
           </div>
@@ -169,7 +173,12 @@ export default function Character() {
                 {character.status}
               </span>
             </div>
-            <p className="cast-name">{character.portrayed}</p>
+            <p className="cast-name">
+              {character.portrayed}
+              {character.birthday !== "Unknown" && (
+                <span>, born {character.birthday}</span>
+              )}
+            </p>
 
             <div className="occupation">
               <p>Occupation</p>

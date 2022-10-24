@@ -42,10 +42,14 @@
   .image {
     display: block;
     inline-size: 100%;
-    block-size: 240px;
+    block-size: 320px;
     object-fit: cover;
     object-position: top;
     margin-block-end: 1rem;
+
+    @include media(lg) {
+      block-size: 240px;
+    }
   }
 
   .nickname {
